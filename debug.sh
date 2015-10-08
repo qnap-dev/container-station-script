@@ -9,4 +9,4 @@ tar cjvf container-station-log.tbz \
     /etc/config/uLinux.conf \
     /etc/config/qpkg.conf \
     /tmp/{ps,ls}.txt \
-    /var/log/container-station
+    /var/log/container-station/*
