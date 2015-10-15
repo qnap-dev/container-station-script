@@ -10,7 +10,7 @@ ls -l /share/CACHEDEV?_DATA/.qpkg/container-station/var/* > /tmp/ls-var.txt
 docker ps -a > /tmp/docker-ps.txt
 docker images > /tmp/docker-image.txt
 
-tar cjvf container-station-log.tbz \
+tar cjvfh container-station-log.tbz \
     /etc/platform.conf \
     /etc/default_config/uLinux.conf \
     /etc/config/uLinux.conf \
