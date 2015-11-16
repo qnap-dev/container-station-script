@@ -18,4 +18,5 @@ tar cjvfh container-station-log.tbz \
     /tmp/{ps,ls}.txt \
     /tmp/ls-*.txt \
     /tmp/docker-*.txt \
-    /var/log/container-station/*
+    /var/log/container-station/* \
+    /etc/qbus
