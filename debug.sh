@@ -6,6 +6,7 @@ ls -al /share/CACHEDEV?_DATA/.qpkg/container-station/* > /tmp/ls.txt
 supervisorctl -c /share/CACHEDEV?_DATA/.qpkg/container-station/etc/supervisord.conf status > /tmp/supervisor-status.log
 ls -R /share/CACHEDEV?_DATA/.qpkg/container-station/etc/ > /tmp/ls-etc.txt
 ls -l /share/CACHEDEV?_DATA/.qpkg/container-station/var/* > /tmp/ls-var.txt
+lsof -ni TCP|grep LISTEN > /tmp/listen-ports.txt
 
 docker ps -a > /tmp/docker-ps.txt
 docker images > /tmp/docker-image.txt
@@ -18,5 +19,6 @@ tar cjvfh container-station-log.tbz \
     /tmp/{ps,ls}.txt \
     /tmp/ls-*.txt \
     /tmp/docker-*.txt \
+    /tmp/listen-ports.txt \
     /var/log/container-station/* \
     /etc/qbus
