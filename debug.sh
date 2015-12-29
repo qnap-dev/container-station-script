@@ -11,6 +11,11 @@ lsof -ni TCP|grep LISTEN > /tmp/listen-ports.txt
 docker ps -a > /tmp/docker-ps.txt
 docker images > /tmp/docker-image.txt
 
+uname -a > /tmp/bridge.txt
+br_util --list_br >> /tmp/bridge.txt
+qs_util -M vswitch -A get >> /tmp/bridge.txt
+brctl show >> /tmp/bridge.txt
+
 tar cjvfh container-station-log.tbz \
     /etc/platform.conf \
     /etc/default_config/uLinux.conf \
@@ -20,5 +25,6 @@ tar cjvfh container-station-log.tbz \
     /tmp/ls-*.txt \
     /tmp/docker-*.txt \
     /tmp/listen-ports.txt \
+    /tmp/bridge.txt \
     /var/log/container-station/* \
     /etc/qbus
