@@ -44,6 +44,9 @@ if [ -n "$(getcfg ubuntu-hd Install_Path -f /etc/config/qpkg.conf -d "")" ]; the
     curl http://127.0.0.1:8080/ubuntu-hd/
     echo "# curl http://127.0.0.1:8080/ubuntu-hd-vnc/"
     curl http://127.0.0.1:8080/ubuntu-hd-vnc/
+    echo "# QBUS"
+    qbus get com.qnap.hd-station/system
+    qbus get com.qnap.hd-station/config
     exec 1>&6 6>&-
 fi
 
