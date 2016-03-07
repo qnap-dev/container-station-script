@@ -28,7 +28,7 @@ br_util --list_br >> /tmp/bridge.txt
 qs_util -M vswitch -A get >> /tmp/bridge.txt
 brctl show >> /tmp/bridge.txt
 
-# ubuntu
+# Linux Station 
 if [ -n "$(getcfg ubuntu-hd Install_Path -f /etc/config/qpkg.conf -d "")" ]; then
     installpath=$(getcfg ubuntu-hd Install_Path -f /etc/config/qpkg.conf -d "")
     logfile=/tmp/ubuntu.txt
@@ -43,7 +43,7 @@ if [ -n "$(getcfg ubuntu-hd Install_Path -f /etc/config/qpkg.conf -d "")" ]; the
     echo "# curl http://127.0.0.1:8080/ubuntu-hd/"
     curl http://127.0.0.1:8080/ubuntu-hd/
     echo "# curl http://127.0.0.1:8080/ubuntu-hd-vnc/"
-    curl http://127.0.0.1:8080/ubuntu-hd-vnc/
+    curl http://127.0.0.1:8080/linux-station-vnc/
     echo "# QBUS"
     qbus get com.qnap.hd-station/system
     qbus get com.qnap.hd-station/config
