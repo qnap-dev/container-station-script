@@ -21,12 +21,17 @@ lxc-ls -f > /tmp/lxc.txt
 docker ps -a > /tmp/docker-ps.txt
 docker images > /tmp/docker-image.txt
 
+# kernel version
+uname -a > /tmp/kernel.txt
+
+# env
+env > /tmp/env.txt
+
 # network
-uname -a > /tmp/bridge.txt
-ip a >> /tmp/bridge.txt
-br_util --list_br >> /tmp/bridge.txt
-qs_util -M vswitch -A get >> /tmp/bridge.txt
-brctl show >> /tmp/bridge.txt
+ip a > /tmp/ip_addr.txt
+ip route > /tmp/ip_route.txt
+brctl show > /tmp/bridge.txt
+curl -m 10 http://google.com > /tmp/curl_test.txt
 
 # Linux Station 
 if [ -n "$(getcfg ubuntu-hd Install_Path -f /etc/config/qpkg.conf -d "")" ]; then
@@ -55,14 +60,21 @@ tar cjvfh container-station-log.tbz \
     /etc/default_config/uLinux.conf \
     /etc/config/uLinux.conf \
     /etc/config/qpkg.conf \
+    /etc/config/br.conf \
+    /etc/config/vswitch.conf \
     /tmp/{ps,ls}.txt \
     /tmp/ls-*.txt \
     /tmp/lxc.txt \
     /tmp/docker-*.txt \
     /tmp/listen-ports.txt \
     /tmp/bridge.txt \
+    /tmp/ip_addr.txt \
+    /tmp/ip_route.txt \
+    /tmp/kernel.txt \
     /var/log/container-station/* \
+    /var/log/network/* \
     /etc/qbus \
+    /tmp/curl_test.txt \
     /tmp/df.txt \
     /tmp/ubuntu.txt \
     /etc/apache-container.conf /etc/apache-sys-proxy.conf /etc/container-proxy.d/
