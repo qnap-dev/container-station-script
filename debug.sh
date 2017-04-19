@@ -73,6 +73,7 @@ tar cjvfh container-station-log.tbz \
     /tmp/ip_route.txt \
     /tmp/kernel.txt \
     /var/log/container-station/* \
+    /var/log/middleware-lib/* \
     /var/log/network/* \
     /etc/qbus \
     /tmp/curl_test.txt \
