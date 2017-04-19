@@ -32,6 +32,7 @@ ip a > /tmp/ip_addr.txt
 ip route > /tmp/ip_route.txt
 brctl show > /tmp/bridge.txt
 curl -m 10 http://google.com > /tmp/curl_test.txt
+log_tool -qv > ./qts_log.txt
 
 # Linux Station 
 if [ -n "$(getcfg ubuntu-hd Install_Path -f /etc/config/qpkg.conf -d "")" ]; then
@@ -44,11 +45,11 @@ if [ -n "$(getcfg ubuntu-hd Install_Path -f /etc/config/qpkg.conf -d "")" ]; the
     lxc-attach -P ${installpath}/lxc -n ubuntu-hd -- bash -c "ip a"
     lxc-attach -P ${installpath}/lxc -n ubuntu-hd -- bash -c "netstat -ntulp"
     echo "# curl http://127.0.0.1:6055/"
-    curl http://127.0.0.1:6055/
+    curl -m 10 http://127.0.0.1:6055/
     echo "# curl http://127.0.0.1:8080/ubuntu-hd/"
-    curl http://127.0.0.1:8080/ubuntu-hd/
+    curl -m 10 http://127.0.0.1:8080/ubuntu-hd/
     echo "# curl http://127.0.0.1:8080/ubuntu-hd-vnc/"
-    curl http://127.0.0.1:8080/linux-station-vnc/
+    curl -m 10 http://127.0.0.1:8080/linux-station-vnc/
     echo "# QBUS"
     qbus get com.qnap.hd-station/system
     qbus get com.qnap.hd-station/config
@@ -77,4 +78,6 @@ tar cjvfh container-station-log.tbz \
     /tmp/curl_test.txt \
     /tmp/df.txt \
     /tmp/ubuntu.txt \
-    /etc/apache-container.conf /etc/apache-sys-proxy.conf /etc/container-proxy.d/
+    /etc/apache-container.conf /etc/apache-sys-proxy.conf /etc/container-proxy.d/ ./qts_log.txt
+
+rm -f ./qts_log.txt
