@@ -1,11 +1,11 @@
 #!/bin/sh
 
 ps aux > /tmp/ps.txt
-ls -al /share/CACHEDEV?_DATA/.qpkg/container-station/* > /tmp/ls.txt
+ls -al /share/*/.qpkg/container-station/* > /tmp/ls.txt
 
-supervisorctl -c /share/CACHEDEV?_DATA/.qpkg/container-station/etc/supervisord.conf status > /tmp/supervisor-status.log
-ls -R /share/CACHEDEV?_DATA/.qpkg/container-station/etc/ > /tmp/ls-etc.txt
-ls -l /share/CACHEDEV?_DATA/.qpkg/container-station/var/* > /tmp/ls-var.txt
+supervisorctl -c /share/*/.qpkg/container-station/etc/supervisord.conf status > /tmp/supervisor-status.log
+ls -R /share/*/.qpkg/container-station/etc/ > /tmp/ls-etc.txt
+ls -l /share/*/.qpkg/container-station/var/* > /tmp/ls-var.txt
 lsof -ni TCP|grep LISTEN > /tmp/listen-ports.txt
 
 # disk
