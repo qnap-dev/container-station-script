@@ -32,7 +32,7 @@ ip a > /tmp/ip_addr.txt
 ip route > /tmp/ip_route.txt
 brctl show > /tmp/bridge.txt
 curl -m 10 http://google.com > /tmp/curl_test.txt
-log_tool -qv > ./qts_log.txt
+log_tool -qv > /tmp/qts_log.txt
 
 # Linux Station 
 if [ -n "$(getcfg ubuntu-hd Install_Path -f /etc/config/qpkg.conf -d "")" ]; then
@@ -79,6 +79,5 @@ tar cjvfh container-station-log.tbz \
     /tmp/curl_test.txt \
     /tmp/df.txt \
     /tmp/ubuntu.txt \
-    /etc/apache-container.conf /etc/apache-sys-proxy.conf /etc/container-proxy.d/ ./qts_log.txt
-
-rm -f ./qts_log.txt
+    /etc/apache-container.conf /etc/apache-sys-proxy.conf /etc/container-proxy.d/ /tmp/qts_log.txt \
+    /share/*/.qpkg/container-station/start-stop.log
