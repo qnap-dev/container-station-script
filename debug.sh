@@ -80,4 +80,5 @@ tar cjvfh container-station-log.tbz \
     /tmp/df.txt \
     /tmp/ubuntu.txt \
     /etc/apache-container.conf /etc/apache-sys-proxy.conf /etc/container-proxy.d/ /tmp/qts_log.txt \
-    /share/*/.qpkg/container-station/start-stop.log
+    /share/*/.qpkg/container-station/start-stop.log \
+    --exclude=/etc/qbus/keys
