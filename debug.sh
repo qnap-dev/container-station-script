@@ -61,8 +61,7 @@ tar cjvfh container-station-log.tbz \
     /etc/default_config/uLinux.conf \
     /etc/config/uLinux.conf \
     /etc/config/qpkg.conf \
-    /etc/config/br.conf \
-    /etc/config/vswitch.conf \
+    /etc/config/nm*.conf \
     /tmp/{ps,ls}.txt \
     /tmp/ls-*.txt \
     /tmp/lxc.txt \
@@ -79,6 +78,6 @@ tar cjvfh container-station-log.tbz \
     /tmp/curl_test.txt \
     /tmp/df.txt \
     /tmp/ubuntu.txt \
-    /etc/apache-container.conf /etc/apache-sys-proxy.conf /etc/container-proxy.d/ /tmp/qts_log.txt \
+    /etc/apache-sys-proxy.conf /etc/container-proxy.d/ /tmp/qts_log.txt \
     /share/*/.qpkg/container-station/start-stop.log \
     --exclude=/etc/qbus/keys
